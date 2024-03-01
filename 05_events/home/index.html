@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 250px;
+            height: 250px;
+            position: absolute;
+        }
+        .greenDiv{
+            background-color: greenyellow;
+        }
+        .yellowDiv{
+            background-color: yellow;
+        }
+        .redDiv{
+            background-color: red;
+
+        }
+        #d1{
+            top: 30px;
+            left: 30px;
+        }
+        #d2{
+            top: 30px;
+            left: 300px;
+        }
+        #d3{
+            top: 30px;
+            left: 570px;
+        }
+        #d4{
+            background-color: gray;
+            top: 300px;
+            left: 310px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="greenDiv" id="d1" onmouseover="changeColor('greenyellow')" onmouseout="resetColor()">
+        </div>
+        <div class="yellowDiv" id="d2" onmouseover="changeColor('yellow')" onmouseout="resetColor()">
+        </div>
+        <div class="redDiv" id="d3" onmouseover="changeColor('red')" onmouseout="resetColor()">
+        </div>
+    </div>
+    <div id="d4">
+    </div>
+
+    <script>
+        function changeColor(color) {
+           d4.style.backgroundColor = color;
+        }
+        function resetColor() {
+           d4.style.backgroundColor = 'gray';
+        }
+    </script>
+</body>
+</html>

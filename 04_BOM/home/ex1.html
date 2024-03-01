@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="openButton" onclick="openWindow()">Відкрити вікно</button>
+    <button id="closeButton" onclick="closeWindow()">Закрити вікно</button>
+    <script >let myWindow;
+        function openWindow() {
+            myWindow = window.open("https://itstep.org", "_blank", "width=640, height=480");
+        }
+        function closeWindow() {
+            if (myWindow) {
+                myWindow.close();
+            }
+        }</script>
+</body>
+</html>

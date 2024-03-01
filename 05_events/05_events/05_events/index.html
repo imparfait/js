@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            body {
+                position: relative;
+                height: 2000px;
+            }
+
+            .moveable {
+                background-color: cadetblue;
+                height: 100px;
+                width: 100px;
+                position: relative;
+            }
+            .colorDiv {
+                height: 200px;
+                width: 200px;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <!-- <body onclick="moveDiv(event)"> -->
+    <body>
+        <div class="moveable" id="moveable"></div>
+        <div onmousedown="colorDivDown(event)" onmouseup="colorDivUp(event)" onmouseenter="colorDivEnter(event)" onmouseleave="colorDivLeave(event)" class="colorDiv" id="colorDiv"></div>
+
+        <label id="label"></label>
+        <br>
+        <input onchange ="label.innerText = event.target.value" id="text" type="text">
+
+        <script>
+            function moveDiv(event) {
+                moveable.style.left = event.pageX + 'px';
+                moveable.style.top = event.pageY + 'px';
+                moveable.style["background-color"] = "black";
+                //moveable.style.backgroundColor = "red";
+            }
+
+            function colorDivUp(event) {
+                console.log("up");
+                colorDiv.style["background-color"] = "red";
+            }
+
+            function colorDivDown(event) {
+                console.log("down");
+                colorDiv.style["background-color"] = "green";
+            }
+
+            function colorDivEnter(event) {
+                console.log("enter");
+                colorDiv.style["background-color"] = "yellow";
+            }
+
+            function colorDivLeave(event) {
+                console.log("leave");
+                colorDiv.style["background-color"] = "black";
+            }
+        </script>
+    </body>
+</html>

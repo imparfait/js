@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  EX 1
+        let name = prompt("Enter your name: ");
+        alert("Hello "+ name);
+
+        //  EX 2
+        const yearN = 2023;
+        let birthYear = Number(prompt("Enter your year of birth: "));
+        let age = yearN-birthYear;
+        alert(age);
+
+        //  EX 3
+        let length= Number(prompt("Enter length: "));
+        let perimeter = length*4;
+        alert(perimeter);
+
+        //  EX 4
+        let radius= Number(prompt("Enter radius: "));
+        const pi=3.14;
+        let area=pi*radius**2;
+        alert(area);
+
+        //  EX 5
+        let distance= Number(prompt("Enter distance: "));
+        let time = Number(prompt("Enter time: "));
+        let speed = distance/time;
+        alert(speed);
+
+        //  EX 6
+        const exchangeRate=0.92;
+        let dollar = Number(prompt("Enter dollars: "));
+        let euro =dollar*exchangeRate;
+        alert(euro);
+
+        //  EX 7
+        let memory= Number(prompt("Enter memory: "));
+        let count=Math.floor((memory*1024)/820);
+        alert(count);
+
+        //  EX 8
+        let money=Number(prompt("Enter money: "));
+        let price=Number(prompt("Enter price: "));
+        let countCh=String(Math.floor(money/price));
+        let rest=String(money%price);
+        alert("Count of chocolate bar "+countCh+"\nRest "+rest);
+
+        //  EX 9
+        let number =Number(prompt("Enter number: "));
+        let n1=Math.floor(number/100);
+        let n2=Math.floor(number/10)%10;
+        let n3=number%10;
+        let palindrom = String(n3)+String(n2)+String(n1);
+        alert(palindrom);
+
+        //  EX 10
+        let num=Number(prompt("Enter number: "));
+        let res=Boolean(num%2);
+        res&& alert("Odd");
+        res||alert("Even");
+    </script>
+</body>
+</html>

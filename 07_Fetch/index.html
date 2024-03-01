@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        height: 100vh; 
+    }
+    
+    #result {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+    }
+    .container {
+        margin-left: 15px;
+    }
+    .search{
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+    .info {
+        margin-left: 20px;
+        margin-top: 15px;
+        text-align: left;
+    }
+    img{
+        height: 300px;
+        width: 300px;
+        margin-right: 20px;
+    }
+   </style>
+    <div class="container">
+        <h1>GitHub User Info</h1>
+        <div class="search">
+            <label for="username">Enter GitHub Username:</label>
+            <input type="text" id="username" >
+            <button id="searchButton" onclick="getUserInfo()">Get Info</button>
+        </div>
+        <hr >
+        <div id="result" class=""></div>
+    </div>
+    <script>
+        function getUserInfo() {
+            const username = document.getElementById('username').value;
+            const resultContainer = document.getElementById('result');
+
+            if (username) {
+                fetch(`https://api.github.com/users/${username}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        displayUserInfo(data);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data:', error);
+                        resultContainer.innerHTML = '<p>Error fetching data. Please try again.</p>';
+                    });
+            } else {
+                resultContainer.innerHTML = '<p>Please enter a GitHub username.</p>';
+            }
+        }
+
+        function displayUserInfo(data) {
+            const resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = `
+                <img src="${data.avatar_url}" alt="Profile Photo">
+                <div class="info">
+                    <p><strong>Name:</strong> ${data.name || 'No name'}</p>
+                    <p><strong>Login:</strong> ${data.login || 'No login'}</p>
+                    <p><strong>Account URL:</strong> <a href="${data.html_url}">${data.html_url}</a></p>
+                    <p><strong>Blog URL:</strong> ${data.blog || 'No blog'}</p>
+                    <p><strong>City:</strong> ${data.location || 'No city'}</p>
+                    <p><strong>Email:</strong> ${data.email || 'No email'}</p>
+                    <p><strong>Followers:</strong> ${data.followers || 'No followers'}</p>
+                    <p><strong>Following:</strong> ${data.following || 'No following'}</p>
+                </div>`;
+                }
+    </script>
+</body>
+</html>

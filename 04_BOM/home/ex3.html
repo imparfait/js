@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button style="height: 30px; width: 150px;" onclick="showHistoryCount()">Кількість записів в історії</button>
+    <p id="historyCount"> </p>
+    <script>
+        function showHistoryCount() {
+            const historyCount = window.history.length;
+            const historyCountElement = document.getElementById('historyCount');
+            historyCountElement.textContent = `Кількість записів в історії: ${historyCount}`;
+        }
+    </script>
+</body>
+</html>

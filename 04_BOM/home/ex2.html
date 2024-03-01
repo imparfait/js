@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="displayLanguages()">
+
+    <h2>Список мов в системі:</h2>
+    <ul id="languagesList"></ul>
+
+    <script>
+        function displayLanguages() {
+            const languages = navigator.languages;
+            const primaryLanguage = languages[0];
+            const languagesList = document.getElementById('languagesList');
+            languages.forEach(language => {
+                const listItem = document.createElement('li');
+                listItem.textContent = language;
+                if (language === primaryLanguage) {
+                    listItem.style.fontWeight = 'bold';
+                }
+                languagesList.appendChild(listItem);
+            });
+        }
+    </script>
+</body>
+</html>

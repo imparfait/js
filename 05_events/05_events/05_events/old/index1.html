@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Events</title>
+    <style>
+        div {
+            background-color: brown;
+            height: 100px;
+            width: 100px;
+        }
+        p {
+            background-color: blueviolet;
+            width: 100px;
+        }
+        button {
+            background-color: coral;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1 cпосіб -->
+    <!-- <div onclick="alert('DIV clicked')"></div> -->
+    <div onclick="elementClick(event)" id="main">my div</div>
+    <p onclick="elementClick(event)">Paragraph</p>
+    <button onclick="elementClick(event)">click me</button>
+    <br>
+    <label style="font-size: large;" id="lbInfo"></label>
+    <br>
+    <h3 onclick="lbInfo.innerText = 'h3 clicked: ' + event.target.nodeName">Text h3</h3>
+    <!-- <script>
+        // 2 cпосіб
+        // main.onclick = function() {
+        //     alert('DIV clicked');
+        // };
+
+        // 3 cпосіб
+        // main.addEventListener("click", function() {
+        //     alert('DIV clicked, with listener');
+        // });
+    </script> -->
+
+
+    <script src="script.js"></script>
+</body>
+</html>

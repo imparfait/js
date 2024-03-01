@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS lesson 1</title>
+</head>
+<body>
+    <h1>Lesson 1 JavaScript</h1>
+
+    <script>
+        // commnets
+
+        /* multi
+         lines 
+         comments
+         */
+
+        // для оголошення змінної використовуємо let
+        // let number = 100;
+        // number = 200;
+
+        // const - константа
+
+        // const value = 100;
+        // value = 200;
+
+        // let num = 50;
+        // num++;
+        // num = num ** 2;
+
+        // alert - вивести вікно з повідомленням
+        // alert("Hello world");
+        // alert(num);
+
+        // confirm - вивести вікно з повідомленням
+        // та кнопками ok (true) cancel (false)
+        // let res = confirm('You are sure?')
+        // alert(res);
+
+        // promt - вивести вікно з повідомленням
+        // та можливістю користувачу ввести значення
+        // let age = prompt('Enter you age');
+
+        // alert(age);
+        
+
+        // console.log - виводить інформацію у консоль (F12 на сторінці та влкдака console)
+        // console.log('Hello world');
+        
+        // let age = prompt("Enter you age")
+        // console.log("User age: " + age)
+
+        // let val
+
+        // val = "text"
+        // console.log(val);
+
+
+        // let value = Boolean(prompt("enter value"));
+        // console.log(typeof value);
+        // console.log(value);
+
+
+
+
+        // ==
+        // ===
+
+        // console.log(1 == '1');
+        // console.log(1 === '1');
+
+        // let val = prompt("value");
+        
+        // if(val == null || val == "") {
+        //     console.log("null");
+        // }
+        // else if(false) {
+
+        // }
+        // else {
+        //     console.log("You value " + val)
+        // }
+        
+
+        // let age = Number(prompt('enter you age'));
+
+        // switch (age) {
+        //     case 10:
+        //         break;
+        //     case 18:
+        //         console.log("Ти повнолітній");
+        //         break;
+        //     default:
+        //         break;
+        // }
+
+
+        while(true) {
+            let age = Number(prompt('enter you age'));
+            if(age < 18) {
+                break;
+            }
+            else {
+                console.log("good");
+                continue;
+            }
+        }
+
+        do {
+            break;
+        }while(true);
+
+
+        for(let i = 0; i < 10; i++) {
+            console.log(i);
+        }
+
+        // for(let num in array) {
+
+        // }
+
+        function MyFunc(value) {
+            console.log(value);
+            return value;
+        }
+
+        let res = MyFunc(200);
+        console.log(res);
+
+    </script>
+</body>
+</html>
